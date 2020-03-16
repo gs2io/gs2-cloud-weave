@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8336008263252673966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8851723930343252996}
+  - component: {fileID: 2940451282550407645}
+  - component: {fileID: 3301893184532616890}
+  - component: {fileID: 3990679340256521431}
+  m_Layer: 0
+  m_Name: Money
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8851723930343252996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336008263252673966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2940451282550407645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336008263252673966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691cfcfa21c47178975d9e50b379ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyNamespaceName: money
+  enableDebugDepositAction: 1
+  identifierDepositPolicyName: money-deposit
+  identifierDepositUserName: money-deposit
+--- !u!114 &3301893184532616890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336008263252673966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41f0c6e312c1b248860572fae8a3228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyNamespaceName: 
+  slot: 0
+  identifierDepositClientId: 
+  identifierDepositClientSecret: 
+  onGetWallet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Money.GetWalletEvent, Gs2.Weave.Money, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDeposit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Money.DepositEvent, Gs2.Weave.Money, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onWithdraw:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Money.WithdrawEvent, Gs2.Weave.Money, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Money.ErrorEvent, Gs2.Weave.Money, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &3990679340256521431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336008263252673966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32a7d35a98a4d8e9232d8b10f610909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walletWidget: {fileID: 0}
+  debugWalletControlWidget: {fileID: 0}

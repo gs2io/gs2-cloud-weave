@@ -1,0 +1,61 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Money initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "ShowcaseNamespaceName": "${Gs2::Weave::ShowcaseNamespaceName}",
+      "ShowcaseModelName": "${Gs2::Weave::ShowcaseModelName}",
+      "ShowcaseKeyNamespaceName": "${Gs2::Weave::ShowcaseKeyNamespaceName}",
+      "ShowcaseKeyName": "${Gs2::Weave::ShowcaseKeyName}"
+    }
+  },
+  "Resources": {
+    "ShowcaseKeyNamespace": {
+      "Type": "GS2::Key::Namespace",
+      "Properties": {
+        "Name": "${ShowcaseKeyNamespaceName}"
+      }
+    },
+    "ShowcaseKey": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${ShowcaseKeyNamespaceName}",
+        "Name": "${ShowcaseKeyName}"
+      },
+      "DependsOn": [
+        "ShowcaseKeyNamespace"
+      ]
+    },
+    "ShowcaseNamespace": {
+      "Type": "GS2::Showcase::Namespace",
+      "Properties": {
+        "Name": "${ShowcaseNamespaceName}",
+        "KeyId": {
+          "!GetAttr": "ShowcaseKey.Item.KeyId"
+        }
+      },
+      "DependsOn": [
+        "ShowcaseKey"
+      ]
+    },
+    "ShowcaseSettings": {
+      "Type": "GS2::Showcase::CurrentShowcaseMaster",
+      "Properties": {
+        "NamespaceName": "${ShowcaseNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "ShowcaseNamespace"
+      ]
+    }
+  },
+  "Outputs": {
+    "ShowcaseNamespaceName": "${ShowcaseKeyNamespaceName}",
+    "ShowcaseModelName": "${ShowcaseModelName}",
+    "ShowcaseKeyNamespaceName": "${ShowcaseKeyNamespaceName}",
+    "ShowcaseKeyName": "${ShowcaseKeyName}",
+    "ShowcaseKeyId": {
+      "!GetAttr": "ShowcaseKey.Item.KeyId"
+    }
+  }
+}

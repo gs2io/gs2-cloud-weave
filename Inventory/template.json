@@ -1,0 +1,91 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Inventory initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "InventoryNamespaceName": "${Gs2::Weave::InventoryNamespaceName}",
+      "EnableDebugAcquireItemAction": "${Gs2::Weave::EnableDebugAcquireItemAction}",
+      "IdentifierAcquireItemPolicyName": "${Gs2::Weave::IdentifierAcquireItemPolicyName}",
+      "IdentifierAcquireItemUserName": "${Gs2::Weave::IdentifierAcquireItemUserName}"
+    }
+  },
+  "Resources": {
+    "InventoryNamespace": {
+      "Type": "GS2::Inventory::Namespace",
+      "Properties": {
+        "Name": "${InventoryNamespaceName}"
+      }
+    },
+    "InventorySettings": {
+      "Type": "GS2::Inventory::CurrentItemModelMaster",
+      "Properties": {
+        "NamespaceName": "${InventoryNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "InventoryNamespace"
+      ]
+    },
+    "IdentifierAcquireItemUser": {
+      "Type": "GS2::Identifier::User",
+      "Properties": {
+        "Name": "${IdentifierAcquireItemUserName}"
+      }
+    },
+    "IdentifierAcquireItemPolicy": {
+      "Type": "GS2::Identifier::SecurityPolicy",
+      "Properties": {
+        "Name": "${IdentifierAcquireItemPolicyName}",
+        "Policy": {
+          "Version": "2016-04-01",
+          "Statements": [
+          {
+            "Effect": "Allow",
+            "Actions": [
+              "Gs2Inventory:AcquireItemSetByUserId"
+            ],
+            "Resources": [
+              "*"
+            ]
+          }
+          ]
+        }
+      }
+    },
+    "IdentifierAcquireItemUserAttachPolicy": {
+      "Type": "GS2::Identifier::AttachSecurityPolicy",
+      "Properties": {
+        "UserName": "${IdentifierAcquireItemUserName}",
+        "SecurityPolicyId": {
+          "!GetAttr": "IdentifierAcquireItemPolicy.Item.SecurityPolicyId"
+        }
+      },
+      "DependsOn": [
+        "IdentifierAcquireItemPolicy",
+        "IdentifierAcquireItemUser"
+      ]
+    },
+    "IdentifierAcquireItemIdentifier": {
+      "Type": "GS2::Identifier::Identifier",
+      "Properties": {
+        "UserName": "${IdentifierAcquireItemUserName}"
+      },
+      "DependsOn": [
+        "IdentifierAcquireItemUser"
+      ]
+    }
+  },
+  "Outputs": {
+    "InventoryNamespaceName": "${InventoryNamespaceName}",
+    "InventoryModelName": "inventory",
+    "EnableDebugAcquireItemAction": "${EnableDebugAcquireItemAction}",
+    "IdentifierAcquireItemPolicyName": "${IdentifierAcquireItemPolicyName}",
+    "IdentifierAcquireItemUserName": "${IdentifierAcquireItemUserName}",
+    "IdentifierAcquireItemClientId": {
+      "!GetAttr": "IdentifierAcquireItemIdentifier.Item.ClientId"
+    },
+    "IdentifierAcquireItemClientSecret": {
+      "!GetAttr": "IdentifierAcquireItemIdentifier.ClientSecret"
+    }
+  }
+}

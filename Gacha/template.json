@@ -1,0 +1,114 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Money initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "ShowcaseNamespaceName": "${Gs2::Weave::ShowcaseNamespaceName}",
+      "ShowcaseModelName": "${Gs2::Weave::ShowcaseModelName}",
+      "KeyNamespaceName": "${Gs2::Weave::KeyNamespaceName}",
+      "ShowcaseKeyName": "${Gs2::Weave::ShowcaseKeyName}",
+      "LotteryNamespaceName": "${Gs2::Weave::LotteryNamespaceName}",
+      "LotteryKeyName": "${Gs2::Weave::LotteryKeyName}",
+      "JobQueueNamespaceName": "${Gs2::Weave::JobQueueNamespaceName}"
+    }
+  },
+  "Resources": {
+    "KeyNamespace": {
+      "Type": "GS2::Key::Namespace",
+      "Properties": {
+        "Name": "${KeyNamespaceName}"
+      }
+    },
+    "ShowcaseKey": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${KeyNamespaceName}",
+        "Name": "${ShowcaseKeyName}"
+      },
+      "DependsOn": [
+        "KeyNamespace"
+      ]
+    },
+    "LotteryKey": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${KeyNamespaceName}",
+        "Name": "${LotteryKeyName}"
+      },
+      "DependsOn": [
+        "KeyNamespace"
+      ]
+    },
+    "ShowcaseNamespace": {
+      "Type": "GS2::Showcase::Namespace",
+      "Properties": {
+        "Name": "${ShowcaseNamespaceName}",
+        "KeyId": {
+          "!GetAttr": "ShowcaseKey.Item.KeyId"
+        }
+      },
+      "DependsOn": [
+        "ShowcaseKey"
+      ]
+    },
+    "ShowcaseSettings": {
+      "Type": "GS2::Showcase::CurrentShowcaseMaster",
+      "Properties": {
+        "NamespaceName": "${ShowcaseNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "ShowcaseNamespace"
+      ]
+    },
+    "LotteryNamespace": {
+      "Type": "GS2::Lottery::Namespace",
+      "Properties": {
+        "Name": "${LotteryNamespaceName}",
+        "QueueNamespaceId": {
+          "!Join": [
+            ":",
+            [
+              "grn",
+              "gs2",
+              {"!GetAttr": "Gs2::Region"},
+              {"!GetAttr": "Gs2::OwnerId"},
+              "queue",
+              "${JobQueueNamespaceName}"
+            ]
+          ]
+        },
+        "KeyId": {
+          "!GetAttr": "LotteryKey.Item.KeyId"
+        }
+      },
+      "DependsOn": [
+        "LotteryKey"
+      ]
+    },
+    "LotterySettings": {
+      "Type": "GS2::Lottery::CurrentLotteryMaster",
+      "Properties": {
+        "NamespaceName": "${LotteryNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "LotteryNamespace"
+      ]
+    }
+  },
+  "Outputs": {
+    "ShowcaseNamespaceName": "${ShowcaseNamespaceName}",
+    "ShowcaseModelName": "${ShowcaseModelName}",
+    "KeyNamespaceName": "${KeyNamespaceName}",
+    "ShowcaseKeyName": "${ShowcaseKeyName}",
+    "LotteryNamespaceName": "${LotteryNamespaceName}",
+    "LotteryKeyName": "${LotteryKeyName}",
+    "ShowcaseKeyId": {
+      "!GetAttr": "ShowcaseKey.Item.KeyId"
+    },
+    "LotteryKeyId": {
+      "!GetAttr": "LotteryKey.Item.KeyId"
+    }
+  }
+}

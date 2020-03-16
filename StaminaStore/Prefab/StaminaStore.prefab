@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5880886901091105487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6342085938776967601}
+  - component: {fileID: 6484189448801547931}
+  - component: {fileID: 194362290424815586}
+  - component: {fileID: 6484189448801547924}
+  m_Layer: 0
+  m_Name: StaminaStore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6342085938776967601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880886901091105487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 526.4293, y: 322.71732, z: -9.131485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6484189448801547931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880886901091105487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443f8509e7e044bb81a0eda5de0c879e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyInstaller: {fileID: 0}
+  staminaInstaller: {fileID: 0}
+  exchangeNamespaceName: stamina-money-exchange
+  keyNamespaceName: stamina-money-exchange
+  keyName: key
+  products:
+  - name: stamina_10
+    recoverValue: 10
+    withdrawCurrencyCount: 2
+  - name: stamina_50
+    recoverValue: 50
+    withdrawCurrencyCount: 10
+--- !u!114 &194362290424815586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880886901091105487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b106be3d11e8143aa5cb9ef674aed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exchangeNamespaceName: 
+  exchangeKeyId: 
+  onGetExchangeRate:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.StaminaStore.GetExchangeRateEvent, Gs2.Weave.StaminaStore,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.StaminaStore.BuyEvent, Gs2.Weave.StaminaStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onIssueBuyStampSheet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.StaminaStore.IssueBuyStampSheetEvent, Gs2.Weave.StaminaStore,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.StaminaStore.ErrorEvent, Gs2.Weave.StaminaStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &6484189448801547924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5880886901091105487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e87968dfb934e7ab03a6cac3cc68971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaStoreWidget: {fileID: 0}

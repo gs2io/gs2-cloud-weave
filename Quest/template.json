@@ -1,0 +1,61 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Quest initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "QuestNamespaceName": "${Gs2::Weave::QuestNamespaceName}",
+      "QuestGroupName": "${Gs2::Weave::QuestGroupName}",
+      "QuestKeyNamespaceName": "${Gs2::Weave::QuestKeyNamespaceName}",
+      "QuestKeyName": "${Gs2::Weave::QuestKeyName}"
+    }
+  },
+  "Resources": {
+    "QuestKeyNamespace": {
+      "Type": "GS2::Key::Namespace",
+      "Properties": {
+        "Name": "${QuestKeyNamespaceName}"
+      }
+    },
+    "QuestKey": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${QuestKeyNamespaceName}",
+        "Name": "${QuestKeyName}"
+      },
+      "DependsOn": [
+        "QuestKeyNamespace"
+      ]
+    },
+    "QuestNamespace": {
+      "Type": "GS2::Quest::Namespace",
+      "Properties": {
+        "Name": "${QuestNamespaceName}",
+        "KeyId": {
+          "!GetAttr": "QuestKey.Item.KeyId"
+        }
+      },
+      "DependsOn": [
+        "QuestKey"
+      ]
+    },
+    "QuestSettings": {
+      "Type": "GS2::Quest::CurrentQuestMaster",
+      "Properties": {
+        "NamespaceName": "${QuestNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "QuestNamespace"
+      ]
+    }
+  },
+  "Outputs": {
+    "QuestNamespaceName": "${QuestNamespaceName}",
+    "QuestGroupName": "${QuestGroupName}",
+    "QuestKeyNamespaceName": "${QuestKeyNamespaceName}",
+    "QuestKeyName": "${QuestKeyName}",
+    "QuestKeyId": {
+      "!GetAttr": "QuestKey.Item.KeyId"
+    }
+  }
+}

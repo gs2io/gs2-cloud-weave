@@ -1,0 +1,23 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Account initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "JobQueueNamespaceName": "${Gs2::Weave::JobQueueNamespaceName}"
+    }
+  },
+  "Resources": {
+    "JobQueueNamespace": {
+      "Type": "GS2::JobQueue::Namespace",
+      "Properties": {
+        "Name": "${JobQueueNamespaceName}"
+      }
+    }
+  },
+  "Outputs": {
+    "JobQueueNamespaceName": "${JobQueueNamespaceName}",
+    "JobQueueNamespaceId": {
+      "!GetAttr": "JobQueueNamespace.Item.NamespaceId"
+    }
+  }
+}

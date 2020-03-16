@@ -1,0 +1,43 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Account initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "AccountNamespaceName": "${Gs2::Weave::AccountNamespaceName}",
+      "KeyNamespaceName": "${Gs2::Weave::KeyNamespaceName}",
+      "KeyName": "${Gs2::Weave::KeyName}"
+    }
+  },
+  "Resources": {
+    "KeyNamespaceName": {
+      "Type": "GS2::Key::Namespace",
+      "Properties": {
+        "Name": "${KeyNamespaceName}"
+      }
+    },
+    "KeyName": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${KeyNamespaceName}",
+        "Name": "${KeyName}"
+      },
+      "DependsOn": [
+        "KeyNamespaceName"
+      ]
+    },
+    "AccountNamespace": {
+      "Type": "GS2::Account::Namespace",
+      "Properties": {
+        "Name": "${AccountNamespaceName}"
+      }
+    }
+  },
+  "Outputs": {
+    "AccountNamespaceName": "${AccountNamespaceName}",
+    "KeyNamespaceName": "${KeyNamespaceName}",
+    "KeyName": "${KeyName}",
+    "AccountEncryptionKeyId": {
+      "!GetAttr": "KeyName.Item.KeyId"
+    }
+  }
+}

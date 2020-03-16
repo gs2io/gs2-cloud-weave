@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1080032077122476713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080032077122476374}
+  - component: {fileID: 4883829561125906432}
+  - component: {fileID: 1080032077122476375}
+  - component: {fileID: 9024495226717732167}
+  m_Layer: 0
+  m_Name: MoneyStore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1080032077122476374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080032077122476713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 526.4293, y: 322.71732, z: -9.131485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4883829561125906432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080032077122476713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c527ed881c34f6d92dcb98c33c1a82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyInstaller: {fileID: 0}
+  showcaseNamespaceName: money-store
+  showcaseModelName: money
+  products:
+  - name: 120yen
+    metadata: 
+    contentsId: io.gs2.sample.contents.120yen
+    price: 120
+    acquireCount: 10
+  - name: 480yen
+    metadata: 
+    contentsId: io.gs2.sample.contents.480yen
+    price: 480
+    acquireCount: 50
+  - name: 1000yen
+    metadata: 
+    contentsId: io.gs2.sample.contents.1000yen
+    price: 1000
+    acquireCount: 120
+  keyNamespaceName: money-store
+  keyName: key
+--- !u!114 &1080032077122476375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080032077122476713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b4b810a0a3a984ba2fef1b1406d118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyNamespaceName: 
+  showcaseNamespaceName: 
+  showcaseName: 
+  showcaseKeyId: 
+  onGetWallet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.GetWalletEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDeposit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.DepositEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onWithdraw:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.WithdrawEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onShowStore:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.ShowStoreEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onGetShowcase:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.GetShowcaseEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.BuyEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onIssueBuyStampSheet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.IssueBuyStampSheetEvent, Gs2.Weave.MoneyStore,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.MoneyStore.ErrorEvent, Gs2.Weave.MoneyStore, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &9024495226717732167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080032077122476713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7b87827c1446f88256a630be2b7b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walletWidget: {fileID: 0}
+  storeWidget: {fileID: 0}

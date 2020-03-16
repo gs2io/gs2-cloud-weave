@@ -1,0 +1,59 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Stamina initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "ExchangeNamespaceName": "${Gs2::Weave::ExchangeNamespaceName}",
+      "ExchangeKeyNamespaceName": "${Gs2::Weave::ExchangeKeyNamespaceName}",
+      "ExchangeKeyName": "${Gs2::Weave::ExchangeKeyName}"
+    }
+  },
+  "Resources": {
+    "ExchangeKeyNamespace": {
+      "Type": "GS2::Key::Namespace",
+      "Properties": {
+        "Name": "${ExchangeKeyNamespaceName}"
+      }
+    },
+    "ExchangeKey": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${ExchangeKeyNamespaceName}",
+        "Name": "${ExchangeKeyName}"
+      },
+      "DependsOn": [
+        "ExchangeKeyNamespace"
+      ]
+    },
+    "ExchangeNamespace": {
+      "Type": "GS2::Exchange::Namespace",
+      "Properties": {
+        "Name": "${ExchangeNamespaceName}",
+        "KeyId": {
+          "!GetAttr": "ExchangeKey.Item.KeyId"
+        }
+      },
+      "DependsOn": [
+        "ExchangeKey"
+      ]
+    },
+    "ExchangeSettings": {
+      "Type": "GS2::Exchange::CurrentRateMaster",
+      "Properties": {
+        "NamespaceName": "${ExchangeNamespaceName}",
+        "Settings": "{{ master }}\n"
+      },
+      "DependsOn": [
+        "ExchangeNamespace"
+      ]
+    }
+  },
+  "Outputs": {
+    "ExchangeNamespaceName": "${ExchangeNamespaceName}",
+    "ExchangeKeyNamespaceName": "${ExchangeKeyNamespaceName}",
+    "ExchangeKeyName": "${ExchangeKeyName}",
+    "ExchangeKeyId": {
+      "!GetAttr": "ExchangeKey.Item.KeyId"
+    }
+  }
+}

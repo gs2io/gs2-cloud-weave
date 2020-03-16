@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2023816012828934233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133378450916238183}
+  - component: {fileID: 8972804029192341971}
+  - component: {fileID: 5917941327529563615}
+  - component: {fileID: 8972804029192341969}
+  m_Layer: 0
+  m_Name: Stamina
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2133378450916238183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023816012828934233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8972804029192341971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023816012828934233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d25327a3994aa5a7161105f6abecd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaNamespaceName: stamina
+  staminaModelName: stamina
+  capacity: 50
+  recoverValue: 1
+  recoverIntervalMinutes: 1
+--- !u!114 &5917941327529563615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023816012828934233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0a6517a94dbbc4ab832f989f4c06d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaNamespaceName: 
+  staminaModelName: 
+  onGetStaminaModel:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Stamina.GetStaminaModelEvent, Gs2.Weave.Stamina, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onGetStamina:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Stamina.GetStaminaEvent, Gs2.Weave.Stamina, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onRecoverStamina:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Stamina.RecoverStaminaEvent, Gs2.Weave.Stamina, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onConsumeStamina:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Stamina.ConsumeStaminaEvent, Gs2.Weave.Stamina, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Stamina.ErrorEvent, Gs2.Weave.Stamina, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &8972804029192341969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023816012828934233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c708b7a3ec0f4f93850344f559e4b372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaWidget: {fileID: 0}
+  debugStaminaControlWidget: {fileID: 0}

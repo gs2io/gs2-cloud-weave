@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5657473100232657576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5657473100232657572}
+  - component: {fileID: 5657473100232657575}
+  - component: {fileID: 5657473100232657574}
+  - component: {fileID: 5657473100232657577}
+  m_Layer: 0
+  m_Name: Unit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5657473100232657572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657473100232657576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 374.77634, y: 289.8593, z: -93.3125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5657473100232657575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657473100232657576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e970230cdf64a3bbdab7da9f772575c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryNamespaceName: unit
+  inventoryModelName: unit
+  capacity: 50
+  units:
+  - name: normal_0001
+    metadata:
+      displayName: '[N] 0001'
+      rarity: 0
+    sortValue: 10000
+  - name: normal_0002
+    metadata:
+      displayName: '[N] 0002'
+      rarity: 0
+    sortValue: 10100
+  - name: normal_0003
+    metadata:
+      displayName: '[N] 0003'
+      rarity: 0
+    sortValue: 10200
+  - name: rare_0001
+    metadata:
+      displayName: '[R] 0001'
+      rarity: 1
+    sortValue: 20000
+  - name: rare_0002
+    metadata:
+      displayName: '[R] 0002'
+      rarity: 1
+    sortValue: 20100
+  - name: rare_0003
+    metadata:
+      displayName: '[R] 0003'
+      rarity: 1
+    sortValue: 20200
+  - name: srare_0001
+    metadata:
+      displayName: '[SR] 0001'
+      rarity: 2
+    sortValue: 30000
+  - name: srare_0002
+    metadata:
+      displayName: '[SR] 0002'
+      rarity: 2
+    sortValue: 30100
+  - name: srare_0003
+    metadata:
+      displayName: '[SR] 0003'
+      rarity: 2
+    sortValue: 30200
+  - name: ssrare_0001
+    metadata:
+      displayName: '[SSR] 0001'
+      rarity: 3
+    sortValue: 40000
+  - name: ssrare_0002
+    metadata:
+      displayName: '[SSR] 0002'
+      rarity: 3
+    sortValue: 40100
+  - name: ssrare_0003
+    metadata:
+      displayName: '[SSR] 0003'
+      rarity: 3
+    sortValue: 40200
+  enableDebugAcquireUnitAction: 1
+  identifierAcquireUnitPolicyName: inventory-acquire-unit
+  identifierAcquireUnitUserName: inventory-acquire-unit
+--- !u!114 &5657473100232657574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657473100232657576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8d7b4030254985af8e2eeb1c9a45b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryNamespaceName: 
+  inventoryModelName: 
+  identifierAcquireUnitClientId: 
+  identifierAcquireUnitClientSecret: 
+  onGetInventoryModel:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Core.CallbackEvent.GetInventoryModelEvent, Gs2.Weave.Core,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onGetInventory:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Core.CallbackEvent.GetInventoryEvent, Gs2.Weave.Core, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onAcquire:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Core.CallbackEvent.AcquireEvent, Gs2.Weave.Core, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onConsume:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Core.CallbackEvent.ConsumeEvent, Gs2.Weave.Core, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Unity.Util.ErrorEvent, Gs2, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &5657473100232657577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657473100232657576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74a90cac1d99475faa645db1d3f00451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitWidget: {fileID: 0}
+  debugUnitControlWidget: {fileID: 0}

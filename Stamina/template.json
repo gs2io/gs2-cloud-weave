@@ -1,0 +1,38 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Stamina initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "StaminaNamespaceName": "${Gs2::Weave::StaminaNamespaceName}",
+      "StaminaModelName": "${Gs2::Weave::StaminaModelName}",
+      "Capacity": "${Gs2::Weave::Capacity}",
+      "RecoverValue": "${Gs2::Weave::RecoverValue}",
+      "RecoverIntervalMinutes": "${Gs2::Weave::RecoverIntervalMinutes}"
+    }
+  },
+  "Resources": {
+    "StaminaNamespace": {
+      "Type": "GS2::Stamina::Namespace",
+      "Properties": {
+        "Name": "${StaminaNamespaceName}"
+      }
+    },
+    "StaminaSettings": {
+      "Type": "GS2::Stamina::CurrentStaminaMaster",
+      "Properties": {
+        "NamespaceName": "${StaminaNamespaceName}",
+        "Settings": "{{ master }}\n"
+      },
+      "DependsOn": [
+        "StaminaNamespace"
+      ]
+    }
+  },
+  "Outputs": {
+    "StaminaNamespaceName": "${StaminaNamespaceName}",
+    "StaminaModelName": "${StaminaModelName}",
+    "Capacity": "${Capacity}",
+    "RecoverValue": "${RecoverValue}",
+    "RecoverIntervalMinutes": "${RecoverIntervalMinutes}"
+  }
+}

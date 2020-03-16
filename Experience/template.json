@@ -1,0 +1,92 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Experience initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "ExperienceNamespaceName": "${Gs2::Weave::ExperienceNamespaceName}",
+      "ExperienceModelName": "${Gs2::Weave::ExperienceModelName}",
+      "EnableDebugIncreaseExperienceAction": "${Gs2::Weave::EnableDebugIncreaseExperienceAction}",
+      "IdentifierIncreaseExperiencePolicyName": "${Gs2::Weave::IdentifierIncreaseExperiencePolicyName}",
+      "IdentifierIncreaseExperienceUserName": "${Gs2::Weave::IdentifierIncreaseExperienceUserName}"
+    }
+  },
+  "Resources": {
+    "ExperienceNamespace": {
+      "Type": "GS2::Experience::Namespace",
+      "Properties": {
+        "Name": "${ExperienceNamespaceName}"
+      }
+    },
+    "ExperienceSettings": {
+      "Type": "GS2::Experience::CurrentExperienceMaster",
+      "Properties": {
+        "NamespaceName": "${ExperienceNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "ExperienceNamespace"
+      ]
+    },
+    "IdentifierIncreaseExperienceUser": {
+      "Type": "GS2::Identifier::User",
+      "Properties": {
+        "Name": "${IdentifierIncreaseExperienceUserName}"
+      }
+    },
+    "IdentifierIncreaseExperiencePolicy": {
+      "Type": "GS2::Identifier::SecurityPolicy",
+      "Properties": {
+        "Name": "${IdentifierIncreaseExperiencePolicyName}",
+        "Policy": {
+          "Version": "2016-04-01",
+          "Statements": [
+            {
+              "Effect": "Allow",
+              "Actions": [
+                "Gs2Experience:AddExperienceByUserId"
+              ],
+              "Resources": [
+                "*"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "IdentifierIncreaseExperienceUserAttachPolicy": {
+      "Type": "GS2::Identifier::AttachSecurityPolicy",
+      "Properties": {
+        "UserName": "${IdentifierIncreaseExperienceUserName}",
+        "SecurityPolicyId": {
+          "!GetAttr": "IdentifierIncreaseExperiencePolicy.Item.SecurityPolicyId"
+        }
+      },
+      "DependsOn": [
+        "IdentifierIncreaseExperiencePolicy",
+        "IdentifierIncreaseExperienceUser"
+      ]
+    },
+    "IdentifierIncreaseExperienceIdentifier": {
+      "Type": "GS2::Identifier::Identifier",
+      "Properties": {
+        "UserName": "${IdentifierIncreaseExperienceUserName}"
+      },
+      "DependsOn": [
+        "IdentifierIncreaseExperienceUser"
+      ]
+    }
+  },
+  "Outputs": {
+    "ExperienceNamespaceName": "${ExperienceNamespaceName}",
+    "ExperienceModelName": "${ExperienceModelName}",
+    "EnableDebugIncreaseExperienceAction": "${EnableDebugIncreaseExperienceAction}",
+    "IdentifierIncreaseExperiencePolicyName": "${IdentifierIncreaseExperiencePolicyName}",
+    "IdentifierIncreaseExperienceUserName": "${IdentifierIncreaseExperienceUserName}",
+    "IdentifierIncreaseExperienceClientId": {
+      "!GetAttr": "IdentifierIncreaseExperienceIdentifier.Item.ClientId"
+    },
+    "IdentifierIncreaseExperienceClientSecret": {
+      "!GetAttr": "IdentifierIncreaseExperienceIdentifier.ClientSecret"
+    }
+  }
+}

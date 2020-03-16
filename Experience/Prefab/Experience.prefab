@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3471433416867420587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5243716010957777566}
+  - component: {fileID: 2327772446875729366}
+  - component: {fileID: 8539289468754107539}
+  - component: {fileID: 1483336896000513733}
+  m_Layer: 0
+  m_Name: Experience
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5243716010957777566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471433416867420587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 358.5121, y: 300.82635, z: -95.517365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2327772446875729366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471433416867420587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c43c8184110414c904c4b51361986a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceNamespaceName: experience
+  experienceModelName: unit
+  threshold: 64000000000000002c01000000000000e803000000000000b80b0000000000001027000000000000
+  levelCap: 6
+  enableDebugIncreaseExperienceAction: 1
+  identifierIncreaseExperiencePolicyName: experience-increase-experience
+  identifierIncreaseExperienceUserName: experience-increase-experience
+--- !u!114 &8539289468754107539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471433416867420587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc40c4b0cd7b8c34ca290b9337b6de9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceNamespaceName: 
+  experienceModelName: 
+  identifierIncreaseExperienceClientId: 
+  identifierIncreaseExperienceClientSecret: 
+  onGetExperienceModel:
+    m_PersistentCalls:
+      m_Calls: []
+  onGetStatuses:
+    m_PersistentCalls:
+      m_Calls: []
+  onIncreaseExperience:
+    m_PersistentCalls:
+      m_Calls: []
+  onIncreaseRank:
+    m_PersistentCalls:
+      m_Calls: []
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1483336896000513733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471433416867420587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8aa9720ee9d0bc428c7f8ba05356e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusWidget: {fileID: 0}

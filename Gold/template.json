@@ -1,0 +1,113 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Inventory initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "InventoryNamespaceName": "${Gs2::Weave::InventoryNamespaceName}",
+      "InventoryModelName": "${Gs2::Weave::InventoryModelName}",
+      "ItemModelName": "${Gs2::Weave::ItemModelName}",
+      "LimitOfCount": "${Gs2::Weave::LimitOfCount}",
+      "EnableDebugAcquireGoldAction": "${Gs2::Weave::EnableDebugAcquireGoldAction}",
+      "IdentifierAcquireGoldPolicyName": "${Gs2::Weave::IdentifierAcquireGoldPolicyName}",
+      "IdentifierAcquireGoldUserName": "${Gs2::Weave::IdentifierAcquireGoldUserName}"
+    }
+  },
+  "Resources": {
+    "InventoryNamespace": {
+      "Type": "GS2::Inventory::Namespace",
+      "Properties": {
+        "Name": "${InventoryNamespaceName}"
+      }
+    },
+    "InventorySettings": {
+      "Type": "GS2::Inventory::CurrentItemModelMaster",
+      "Properties": {
+        "NamespaceName": "${InventoryNamespaceName}",
+        "Settings": {
+          "version": "2019-02-05",
+          "inventoryModels": [
+            {
+              "name": "${InventoryModelName}",
+              "initialCapacity": 1,
+              "maxCapacity": 1,
+              "itemModels": [
+                {
+                  "name": "${ItemModelName}",
+                  "stackingLimit": "${LimitOfCount}",
+                  "allowMultipleStacks": false,
+                  "sortValue": 0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "InventoryNamespace"
+      ]
+    },
+    "IdentifierAcquireGoldUser": {
+      "Type": "GS2::Identifier::User",
+      "Properties": {
+        "Name": "${IdentifierAcquireGoldUserName}"
+      }
+    },
+    "IdentifierAcquireGoldPolicy": {
+      "Type": "GS2::Identifier::SecurityPolicy",
+      "Properties": {
+        "Name": "${IdentifierAcquireGoldPolicyName}",
+        "Policy": {
+          "Version": "2016-04-01",
+          "Statements": [
+          {
+            "Effect": "Allow",
+            "Actions": [
+              "Gs2Inventory:AcquireItemSetByUserId"
+            ],
+            "Resources": [
+              "*"
+            ]
+          }
+          ]
+        }
+      }
+    },
+    "IdentifierAcquireGoldUserAttachPolicy": {
+      "Type": "GS2::Identifier::AttachSecurityPolicy",
+      "Properties": {
+        "UserName": "${IdentifierAcquireGoldUserName}",
+        "SecurityPolicyId": {
+          "!GetAttr": "IdentifierAcquireGoldPolicy.Item.SecurityPolicyId"
+        }
+      },
+      "DependsOn": [
+        "IdentifierAcquireGoldPolicy",
+        "IdentifierAcquireGoldUser"
+      ]
+    },
+    "IdentifierAcquireGoldIdentifier": {
+      "Type": "GS2::Identifier::Identifier",
+      "Properties": {
+        "UserName": "${IdentifierAcquireGoldUserName}"
+      },
+      "DependsOn": [
+        "IdentifierAcquireGoldUser"
+      ]
+    }
+  },
+  "Outputs": {
+    "InventoryNamespaceName": "${InventoryNamespaceName}",
+    "InventoryModelName": "${InventoryModelName}",
+    "ItemModelName": "${ItemModelName}",
+    "LimitOfCount": "${LimitOfCount}",
+    "EnableDebugAcquireGoldAction": "${EnableDebugAcquireGoldAction}",
+    "IdentifierAcquireGoldPolicyName": "${IdentifierAcquireGoldPolicyName}",
+    "IdentifierAcquireGoldUserName": "${IdentifierAcquireGoldUserName}",
+    "IdentifierAcquireGoldClientId": {
+      "!GetAttr": "IdentifierAcquireGoldIdentifier.Item.ClientId"
+    },
+    "IdentifierAcquireGoldClientSecret": {
+      "!GetAttr": "IdentifierAcquireGoldIdentifier.ClientSecret"
+    }
+  }
+}

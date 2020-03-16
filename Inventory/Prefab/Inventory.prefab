@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5505902043700124519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5613074109319133273}
+  - component: {fileID: 4301433501813140170}
+  - component: {fileID: 5505902043700124513}
+  - component: {fileID: 1833478733689343488}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5613074109319133273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505902043700124519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4301433501813140170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505902043700124519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a580ef933b9e47899752ad68c613b563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryNamespaceName: inventory
+  inventoryModel:
+    inventoryModelId: 
+    name: inventory
+    metadata: 
+    initialCapacity: 50
+    maxCapacity: 100
+    itemModels:
+    - itemModelId: 
+      name: fire_element
+      metadata: 
+      stackingLimit: 99
+      allowMultipleStacks: 1
+      sortValue: 0
+    - itemModelId: 
+      name: water_element
+      metadata: 
+      stackingLimit: 99
+      allowMultipleStacks: 1
+      sortValue: 1
+  enableDebugAcquireItemAction: 1
+  identifierAcquireItemPolicyName: inventory-acquire-item
+  identifierAcquireItemUserName: inventory-acquire-item
+--- !u!114 &5505902043700124513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505902043700124519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcad8ba6d76882f419cd9b0e94776f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryNamespaceName: 
+  inventoryModelName: 
+  identifierAcquireItemClientId: 
+  identifierAcquireItemClientSecret: 
+  onGetInventoryModel:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Inventory.GetInventoryModelEvent, Gs2.Weave.Inventory, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onGetInventory:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Inventory.GetInventoryEvent, Gs2.Weave.Inventory, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onAcquire:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Inventory.AcquireEvent, Gs2.Weave.Inventory, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onConsume:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Inventory.ConsumeEvent, Gs2.Weave.Inventory, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onError:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gs2.Weave.Inventory.ErrorEvent, Gs2.Weave.Inventory, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1833478733689343488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505902043700124519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43302bb9410b4eb7af9ddeae8e42f024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryWidget: {fileID: 0}
+  debugInventoryControlWidget: {fileID: 0}

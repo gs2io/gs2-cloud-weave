@@ -1,0 +1,14 @@
+{
+  "package": "io.gs2",
+  "name": "Experience",
+  "author": "Game Server Services, Inc.",
+  "version": "1.0.0",
+  "dependencies": {
+    "io.gs2.Credential": "1.0.0",
+    "io.gs2.Login": "1.0.0",
+    "io.gs2.Unit": "1.0.0"
+  },
+  "templates": [
+    "template.json"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Gs2.Weave.Core",
+    "references": [
+        "Gs2",
+        "Gs2.Editor",
+        "Gs2.Editor.Weave",
+        "Unity.EditorCoroutines.Editor"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "WindowsStandalone32"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
