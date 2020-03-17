@@ -6,7 +6,16 @@
   "description": "サーバサイドで管理されたアカウント情報を使用してログイン出来るようにします。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
   "category": "SDK",
+  "author": {
+    "name": "Game Server Services, Inc.",
+    "url": "https://gs2.io/",
+    "email": "contact@gs2.io"
+  },
   "dependencies": {
     "io.gs2.unity.weave.credential": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gs2io/gs2-cloud-weave/tree/master/Login"
   }
 }

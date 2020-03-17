@@ -6,9 +6,18 @@
   "description": "課金通貨を使用してガチャを引き、ユニットを手に入れるようにします。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
   "category": "SDK",
+  "author": {
+    "name": "Game Server Services, Inc.",
+    "url": "https://gs2.io/",
+    "email": "contact@gs2.io"
+  },
   "dependencies": {
-    "io.gs2.unity.weave.moneyStore": "1.0.0",
+    "io.gs2.unity.weave.money-store": "1.0.0",
     "io.gs2.unity.weave.unit": "1.0.0",
-    "io.gs2.unity.weave.jobQueue": "1.0.0"
+    "io.gs2.unity.weave.job-queue": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gs2io/gs2-cloud-weave/tree/master/Gacha"
   }
 }
