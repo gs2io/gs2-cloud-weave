@@ -12,7 +12,7 @@
     "email": "contact@gs2.io"
   },
   "dependencies": {
-    "io.gs2.unity.weave.unit": "1.0.0"
+    "io.gs2.unity.weave.unit": "^1.0.0"
   },
   "repository": {
     "type": "git",
