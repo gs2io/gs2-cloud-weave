@@ -18,7 +18,6 @@ namespace Gs2.Weave.Core.Editor
         private bool _installing;
         private bool _updating;
         private bool _uninstalling;
-        private bool _validating;
 
         private string _status;
 
@@ -43,7 +42,7 @@ namespace Gs2.Weave.Core.Editor
                 _manifest = Manifest.Load(this);
             }
 
-            if (_installing || _updating || _validating || _uninstalling)
+            if (_installing || _updating || _uninstalling)
             {
                 if (_installing)
                 {
@@ -52,10 +51,6 @@ namespace Gs2.Weave.Core.Editor
                 else if (_updating)
                 {
                     EditorGUILayout.LabelField("アップデート中...");
-                }
-                else if (_validating)
-                {
-                    EditorGUILayout.LabelField("検証中...");
                 }
                 else if (_uninstalling)
                 {
@@ -235,28 +230,6 @@ namespace Gs2.Weave.Core.Editor
                     else
                     {
                         EditorUtility.DisplayDialog("Validation Error", "インストールパラメータの入力値に問題があります", "OK");
-                    }
-                }
-
-                if (_postProcess != null)
-                {
-                    if (GUILayout.Button("マスターデータの検証"))
-                    {
-                        EditorCoroutineUtility.StartCoroutineOwnerless(
-                            WeaveInstaller.Validate(
-                                _manifest,
-                                () =>
-                                {
-                                    EditorUtility.DisplayDialog("Success", "OK", "OK");
-                                    Repaint();
-                                    _validating = false;
-                                    _status = null;
-                                },
-                                _postProcess
-                            )
-                        );
-                        _validating = true;
-                        Repaint();
                     }
                 }
             }

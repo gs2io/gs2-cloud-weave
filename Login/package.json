@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.login",
   "displayName": "CloudWeave Login",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "unity": "2019.3",
   "description": "サーバサイドで管理されたアカウント情報を使用してログイン出来るようにします。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
@@ -11,11 +11,10 @@
     "url": "https://gs2.io/",
     "email": "contact@gs2.io"
   },
+  "sampleScene": "LoginSample",
+  "tutorialWindowClassPath": "Gs2.Weave.Login.Editor.Tutorial.TutorialWindow, Gs2.Weave.Login",
   "dependencies": {
-    "io.gs2.unity.weave.credential": "1.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gs2io/gs2-cloud-weave/tree/master/Login"
+    "io.gs2.unity.weave.credential": "1.0.12",
+    "com.unity.modules.jsonserialize": "1.0.0"
   }
 }

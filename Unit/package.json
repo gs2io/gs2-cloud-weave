@@ -11,11 +11,8 @@
     "url": "https://gs2.io/",
     "email": "contact@gs2.io"
   },
+  "sampleScene": "UnitScene",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gs2io/gs2-cloud-weave/tree/master/Unit"
+    "io.gs2.unity.weave.login": "1.0.5"
   }
 }

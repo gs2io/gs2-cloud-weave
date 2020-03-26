@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using Gs2.Gs2Quest.Model;
-using Gs2.Unity.Gs2Quest.Model;
 using Gs2.Unity.Gs2Quest.Model;
 using Gs2.Weave.Core.Watcher;
 using UnityEngine;

@@ -11,12 +11,9 @@
     "url": "https://gs2.io/",
     "email": "contact@gs2.io"
   },
+  "sampleScene": "StaminaStoreSample",
   "dependencies": {
     "io.gs2.unity.weave.money-store": "1.0.0",
     "io.gs2.unity.weave.stamina": "1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gs2io/gs2-cloud-weave/tree/master/StaminaStore"
   }
 }

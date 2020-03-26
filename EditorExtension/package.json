@@ -1,9 +1,9 @@
 {
-  "name": "io.gs2.unity.weave.inventory",
-  "displayName": "CloudWeave Inventory",
-  "version": "1.0.1",
+  "name": "io.gs2.unity.weave.editor-extension",
+  "displayName": "CloudWeave EditorExtension",
+  "version": "1.0.18",
   "unity": "2019.3",
-  "description": "所有アイテムをサーバサイドで管理します。",
+  "description": "CloudWeave を利用するための Unity Editor 拡張。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
   "category": "SDK",
   "author": {
@@ -11,8 +11,7 @@
     "url": "https://gs2.io/",
     "email": "contact@gs2.io"
   },
-  "sampleScene": "InventorySample",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.5"
+    "com.unity.editorcoroutines": "0.1.0-preview.2"
   }
 }

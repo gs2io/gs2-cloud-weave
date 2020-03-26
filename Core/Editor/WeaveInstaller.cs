@@ -1,18 +1,15 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Gs2.Core;
-using Gs2.Core.Util;
 using Gs2.Editor.Core;
 using Gs2.Gs2Deploy;
-using Gs2.Gs2Deploy.Model;
 using Gs2.Gs2Deploy.Request;
-using LitJson;
+using Gs2.Gs2Deploy.Result;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Purchasing;
 using Event = Gs2.Gs2Deploy.Model.Event;
 
 namespace Gs2.Weave.Core.Editor
@@ -26,7 +23,7 @@ namespace Gs2.Weave.Core.Editor
 
         private static bool _statusGetting = false;
 
-        public static IEnumerator GetStatus(Manifest manifest, UnityAction<AsyncResult<Gs2Deploy.Result.GetStackStatusResult>> callback)
+        public static IEnumerator GetStatus(Manifest manifest, UnityAction<AsyncResult<GetStackStatusResult>> callback)
         {
             if(_statusGetting) yield break;
 
@@ -61,7 +58,7 @@ namespace Gs2.Weave.Core.Editor
             var exit = false;
             foreach (var template in manifest.templates)
             {
-                var templateData = new StreamReader(manifest.basePath + template, System.Text.Encoding.UTF8).ReadToEnd();
+                var templateData = new StreamReader(manifest.basePath + template, Encoding.UTF8).ReadToEnd();
 
                 if (postProcess != null)
                 {
@@ -143,7 +140,7 @@ namespace Gs2.Weave.Core.Editor
             var exit = false;
             foreach (var template in manifest.templates)
             {
-                var templateData = new StreamReader(manifest.basePath + template, System.Text.Encoding.UTF8).ReadToEnd();
+                var templateData = new StreamReader(manifest.basePath + template, Encoding.UTF8).ReadToEnd();
 
                 if (postProcess != null)
                 {
@@ -178,7 +175,7 @@ namespace Gs2.Weave.Core.Editor
             var exit = false;
             foreach (var template in manifest.templates)
             {
-                var templateData = new StreamReader(manifest.basePath + template, System.Text.Encoding.UTF8).ReadToEnd();
+                var templateData = new StreamReader(manifest.basePath + template, Encoding.UTF8).ReadToEnd();
 
                 if (postProcess != null)
                 {
@@ -329,7 +326,7 @@ namespace Gs2.Weave.Core.Editor
             callback.Invoke();
         }
         
-        public static IEnumerator GetOutputs(Manifest manifest, UnityAction<AsyncResult<Gs2Deploy.Result.DescribeOutputsResult>> callback)
+        public static IEnumerator GetOutputs(Manifest manifest, UnityAction<AsyncResult<DescribeOutputsResult>> callback)
         {
             foreach (var template in manifest.templates)
             {

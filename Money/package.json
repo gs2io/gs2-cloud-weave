@@ -11,11 +11,8 @@
     "url": "https://gs2.io/",
     "email": "contact@gs2.io"
   },
+  "sampleScene": "MoneySample",
   "dependencies": {
-    "io.gs2.unity.weave.credential": "1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gs2io/gs2-cloud-weave/tree/master/Money"
+    "io.gs2.unity.weave.login": "1.0.5"
   }
 }

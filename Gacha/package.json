@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.gacha",
   "displayName": "CloudWeave Gacha",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "unity": "2019.3",
   "description": "課金通貨を使用してガチャを引き、ユニットを手に入れるようにします。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
@@ -11,6 +11,7 @@
     "url": "https://gs2.io/",
     "email": "contact@gs2.io"
   },
+  "sampleScene": "GachaScene",
   "dependencies": {
     "io.gs2.unity.weave.money-store": "1.0.0",
     "io.gs2.unity.weave.unit": "1.0.0",

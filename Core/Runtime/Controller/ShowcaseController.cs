@@ -59,6 +59,8 @@ namespace Gs2.Weave.Core.Controller
             string contentsId = null
         )
         {
+            var tempConfig = new List<EzConfig>(config);
+#if UNITY_PURCHASING
             string receipt = null;
             if (contentsId != null)
             {
@@ -79,7 +81,6 @@ namespace Gs2.Weave.Core.Controller
                 receipt = result.Result;
             }
 
-            var tempConfig = new List<EzConfig>(config);
             
             if (receipt != null)
             {
@@ -91,6 +92,7 @@ namespace Gs2.Weave.Core.Controller
                     }
                 );
             }
+#endif
 
             string stampSheet;
             {
