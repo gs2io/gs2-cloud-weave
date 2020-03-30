@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.job-queue",
   "displayName": "CloudWeave JobQueue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2019.3",
   "description": "遅延実行処理を行えるようにします。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
@@ -13,6 +13,6 @@
   },
   "sampleScene": "JobQueueScene",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.5"
+    "io.gs2.unity.weave.login": "1.0.6"
   }
 }

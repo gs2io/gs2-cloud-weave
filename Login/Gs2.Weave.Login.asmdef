@@ -2,8 +2,6 @@
     "name": "Gs2.Weave.Login",
     "references": [
         "Gs2",
-        "Gs2.Editor",
-        "Gs2.Editor.Weave",
         "Gs2.Weave.Core",
         "Gs2.Weave.Credential"
     ],

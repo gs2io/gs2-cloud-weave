@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.gold",
   "displayName": "CloudWeave Gold",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "unity": "2019.3",
   "description": "ゲーム内通貨をサーバサイドで管理します。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
@@ -13,6 +13,6 @@
   },
   "sampleScene": "GoldSample",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.5"
+    "io.gs2.unity.weave.login": "1.0.6"
   }
 }

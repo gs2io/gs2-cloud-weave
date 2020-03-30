@@ -5,7 +5,7 @@
     ],
     "includePlatforms": [],
     "excludePlatforms": [
-        "WindowsStandalone32"
+        "Editor"
     ],
     "allowUnsafeCode": false,
     "overrideReferences": false,
