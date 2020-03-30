@@ -1,0 +1,19 @@
+﻿{
+    "name": "Gs2.Weave.Money.Editor",
+    "references": [
+        "Gs2",
+        "Gs2.Editor",
+        "Gs2.Weave.Core.Editor",
+        "Gs2.Weave.Money",
+        "Unity.EditorCoroutines.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Gs2.Weave.Gacha.Editor",
+    "references": [
+        "Gs2",
+        "Gs2.Editor",
+        "Gs2.Weave.Core.Editor",
+        "Gs2.Weave.Gacha",
+        "Gs2.Weave.JobQueue",
+        "Gs2.Weave.Money",
+        "Gs2.Weave.Unit"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
