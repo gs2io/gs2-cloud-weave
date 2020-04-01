@@ -92,6 +92,9 @@ namespace Gs2.Weave.Core.Controller
                     }
                 );
             }
+#else
+            Debug.LogError("Unity Purchasing を有効にしてください。");
+            throw new InvalidProgramException("Unity Purchasing を有効にしてください。");
 #endif
 
             string stampSheet;
