@@ -1,0 +1,18 @@
+{
+  "name": "io.gs2.unity.weave.money-store-discount",
+  "displayName": "CloudWeave MoneyStoreDiscount",
+  "version": "1.0.0",
+  "unity": "2019.3",
+  "description": "課金通貨を一度だけ安く購入できるようにするサンプルです。",
+  "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
+  "category": "SDK",
+  "author": {
+    "name": "Game Server Services, Inc.",
+    "url": "https://gs2.io/",
+    "email": "contact@gs2.io"
+  },
+  "sampleScene": "MoneyStoreScene",
+  "dependencies": {
+    "io.gs2.unity.weave.money": "1.0.2"
+  }
+}
