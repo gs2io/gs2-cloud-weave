@@ -1,0 +1,60 @@
+{
+  "GS2TemplateFormatVersion": "2019-05-01",
+  "Description": "GS2-Formation initialize template Version 2010-06-26",
+  "Globals": {
+    "Alias": {
+      "FormationNamespaceName": "${Gs2::Weave::FormationNamespaceName}",
+      "MoldModelName": "${Gs2::Weave::MoldModelName}",
+      "FormModelName": "${Gs2::Weave::FormModelName}",
+      "PartyKeyNamespaceName": "${Gs2::Weave::PartyKeyNamespaceName}",
+      "PartyKeyName": "${Gs2::Weave::PartyKeyName}",
+      "NumberOfSaveArea": "${Gs2::Weave::NumberOfSaveArea}",
+      "NumberOfUnit": "${Gs2::Weave::NumberOfUnit}"
+    }
+  },
+  "Resources": {
+    "PartyKeyNamespace": {
+      "Type": "GS2::Key::Namespace",
+      "Properties": {
+        "Name": "${PartyKeyNamespaceName}"
+      }
+    },
+    "PartyKey": {
+      "Type": "GS2::Key::Key",
+      "Properties": {
+        "NamespaceName": "${PartyKeyNamespaceName}",
+        "Name": "${PartyKeyName}"
+      },
+      "DependsOn": [
+        "PartyKeyNamespace"
+      ]
+    },
+    "FormationNamespace": {
+      "Type": "GS2::Formation::Namespace",
+      "Properties": {
+        "Name": "${FormationNamespaceName}"
+      }
+    },
+    "FormationSettings": {
+      "Type": "GS2::Formation::CurrentFormMaster",
+      "Properties": {
+        "NamespaceName": "${FormationNamespaceName}",
+        "Settings": null
+      },
+      "DependsOn": [
+        "FormationNamespace"
+      ]
+    }
+  },
+  "Outputs": {
+    "FormationNamespaceName": "${FormationNamespaceName}",
+    "MoldModelName": "${MoldModelName}",
+    "FormModelName": "${FormModelName}",
+    "PartyKeyName": "${PartyKeyName}",
+    "PartyKeyId": {
+      "!GetAttr": "PartyKey.Item.KeyId"
+    },
+    "NumberOfSaveArea": "${NumberOfSaveArea}",
+    "NumberOfUnit": "${NumberOfUnit}"
+  }
+}
