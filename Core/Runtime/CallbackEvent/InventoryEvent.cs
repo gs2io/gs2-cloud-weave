@@ -16,6 +16,11 @@ namespace Gs2.Weave.Core.CallbackEvent
     }
 
     [Serializable]
+    public class GetItemSetWithSignatureEvent : UnityEvent<string, string, string, string>
+    {
+    }
+
+    [Serializable]
     public class AcquireEvent : UnityEvent<EzInventory, List<EzItemSet>, int>
     {
     }

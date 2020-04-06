@@ -125,6 +125,48 @@ namespace Gs2.Weave.Core.Controller
             onGetInventory.Invoke(inventory, itemSets);
         }
 
+        public static IEnumerator GetItemSetWithSignature(
+            Client client,
+            GameSession session,
+            string inventoryNamespaceName,
+            string inventoryModelName,
+            string itemModelName,
+            string itemSetName,
+            string signatureKeyId,
+            GetItemSetWithSignatureEvent onGetItemSetWithSignature,
+            ErrorEvent onError
+        )
+        {
+            
+            {
+                AsyncResult<EzGetItemWithSignatureResult> result = null;
+                yield return client.Inventory.GetItemWithSignature(
+                    r => { result = r; },
+                    session,
+                    inventoryNamespaceName,
+                    inventoryModelName,
+                    itemModelName,
+                    signatureKeyId,
+                    itemSetName
+                );
+
+                if (result.Error != null)
+                {
+                    onError.Invoke(
+                        result.Error
+                    );
+                    yield break;
+                }
+
+                onGetItemSetWithSignature.Invoke(
+                    result.Result.Items.First().ItemSetId,
+                    signatureKeyId,
+                    result.Result.Body,
+                    result.Result.Signature
+                );
+            }
+        }
+
         public static IEnumerator Acquire(
             GameSession session,
             string identifierAcquireItemClientId,
