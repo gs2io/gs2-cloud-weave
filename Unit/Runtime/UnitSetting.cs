@@ -27,6 +27,9 @@
         public GetInventoryEvent onGetInventory = new GetInventoryEvent();
 
         [SerializeField]
+        public GetItemSetWithSignatureEvent onGetItemSetWithSignature = new GetItemSetWithSignatureEvent();
+        
+        [SerializeField]
         public AcquireEvent onAcquire = new AcquireEvent();
 
         [SerializeField]
