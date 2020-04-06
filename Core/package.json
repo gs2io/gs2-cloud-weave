@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "com.unity.ugui": "1.0.0",
-    "io.gs2.unity.sdk": "2020.3.28"
+    "io.gs2.unity.sdk": "2020.4.2"
   }
 }
