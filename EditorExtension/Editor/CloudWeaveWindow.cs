@@ -177,19 +177,22 @@ namespace Gs2.Weave.EditorExtension.Editor
                 {
                     if (package.sampleScene != null)
                     {
-                        var scenePath = AssetDatabase
-                            .FindAssets("t:SceneAsset")
-                            .Select(AssetDatabase.GUIDToAssetPath)
-                            .Select(path => AssetDatabase.LoadAssetAtPath(path, typeof(SceneAsset)))
-                            .Where(obj => obj != null)
-                            .Select(obj => (SceneAsset) obj)
-                            .Where(scene => scene.name == package.sampleScene)
-                            .Select(AssetDatabase.GetAssetPath)
-                            .First(path => path.StartsWith("Packages/" + package.name));
+                        try
+                        {
+                            var scenePath = AssetDatabase
+                                .FindAssets("t:SceneAsset")
+                                .Select(AssetDatabase.GUIDToAssetPath)
+                                .Select(path => AssetDatabase.LoadAssetAtPath(path, typeof(SceneAsset)))
+                                .Where(obj => obj != null)
+                                .Select(obj => (SceneAsset) obj)
+                                .Where(scene => scene.name == package.sampleScene)
+                                .Select(AssetDatabase.GetAssetPath)
+                                .First(path => path.StartsWith("Packages/" + package.name));
 
-                        AssetDatabase.CopyAsset(scenePath, "Assets/Scenes/" + package.sampleScene + ".unity");
+                            AssetDatabase.CopyAsset(scenePath, "Assets/Scenes/" + package.sampleScene + ".unity");
 
-                        EditorSceneManager.OpenScene("Assets/Scenes/" + package.sampleScene + ".unity");
+                            EditorSceneManager.OpenScene("Assets/Scenes/" + package.sampleScene + ".unity");
+                        } catch (InvalidOperationException) {}
                     }
 
                     if (package.tutorialWindowClassPath != null)

@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.editor-extension",
   "displayName": "CloudWeave EditorExtension",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "unity": "2019.3",
   "description": "CloudWeave を利用するための Unity Editor 拡張。",
   "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
