@@ -19,6 +19,6 @@
   },
   "sampleScene": "JobQueueScene",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.9"
+    "io.gs2.unity.weave.login": "1.0.10"
   }
 }
