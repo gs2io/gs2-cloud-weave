@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.stamina-store",
   "displayName": "CloudWeave StaminaStore",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "unity": "2019.3",
   "description": "課金通貨を消費してスタミナを回復できるようにします。",
   "keywords": [
