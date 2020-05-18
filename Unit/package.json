@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.unit",
   "displayName": "CloudWeave Unit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "unity": "2019.3",
   "description": "ユニットを入手・表示できるようにします。",
   "keywords": [
