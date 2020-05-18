@@ -1,10 +1,16 @@
 {
   "name": "io.gs2.unity.weave.unit",
   "displayName": "CloudWeave Unit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "unity": "2019.3",
   "description": "ユニットを入手・表示できるようにします。",
-  "keywords": ["GS2", "Game Server Services", "BaaS", "mBaaS", "Server"],
+  "keywords": [
+    "GS2",
+    "Game Server Services",
+    "BaaS",
+    "mBaaS",
+    "Server"
+  ],
   "category": "SDK",
   "author": {
     "name": "Game Server Services, Inc.",
@@ -13,6 +19,6 @@
   },
   "sampleScene": "UnitScene",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.8"
+    "io.gs2.unity.weave.login": "1.0.9"
   }
 }
