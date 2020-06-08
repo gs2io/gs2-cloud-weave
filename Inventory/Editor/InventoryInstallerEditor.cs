@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Gs2.Weave.Core.Editor;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEditor;
 
 namespace Gs2.Weave.Inventory

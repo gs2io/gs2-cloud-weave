@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEditor;
 using UnityEngine;
 

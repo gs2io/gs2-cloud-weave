@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Gs2.Gs2Inventory.Model;
 using Gs2.Weave.Core;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEngine;
 
 namespace Gs2.Weave.Unit

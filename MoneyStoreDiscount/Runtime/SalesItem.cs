@@ -1,6 +1,6 @@
 using System.Linq;
 using Gs2.Unity.Gs2Showcase.Model;
-using LitJson;
+using Gs2.Util.LitJson;
 
 namespace Gs2.Weave.MoneyStoreDiscount
 {

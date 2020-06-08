@@ -20,7 +20,7 @@
   "sampleScene": "LoginSample",
   "tutorialWindowClassPath": "Gs2.Weave.Login.Editor.Tutorial.TutorialWindow, Gs2.Weave.Login",
   "dependencies": {
-    "io.gs2.unity.weave.credential": "1.0.18",
+    "io.gs2.unity.weave.credential": "1.0.19",
     "com.unity.modules.jsonserialize": "1.0.0"
   }
 }

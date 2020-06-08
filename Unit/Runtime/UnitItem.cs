@@ -1,5 +1,5 @@
 using Gs2.Unity.Gs2Inventory.Model;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;

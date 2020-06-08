@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Gs2.Gs2Stamina.Request;
 using Gs2.Unity.Gs2Quest.Model;
-using LitJson;
+using Gs2.Util.LitJson;
 
 namespace Gs2.Weave.Quest
 {

@@ -9,7 +9,7 @@ using Gs2.Unity.Gs2Quest.Model;
 using Gs2.Unity.Util;
 using Gs2.Weave.Core.Controller;
 using Gs2.Weave.Core.Watcher;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEngine;
 using UnityEngine.Events;
 using Weave.Core.Runtime;

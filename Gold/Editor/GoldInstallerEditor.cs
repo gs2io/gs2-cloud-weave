@@ -6,7 +6,7 @@ using Gs2.Core.Util;
 using Gs2.Gs2Inventory.Model;
 using Gs2.Unity.Gs2Inventory.Model;
 using Gs2.Weave.Core.Editor;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEditor;
 using UnityEngine;
 

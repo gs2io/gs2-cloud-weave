@@ -5,7 +5,7 @@ using Gs2.Gs2Limit.Model;
 using Gs2.Gs2Showcase.Model;
 using Gs2.Unity.Gs2Showcase.Model;
 using Gs2.Weave.Core.Editor;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEditor;
 using UnityEngine;
 

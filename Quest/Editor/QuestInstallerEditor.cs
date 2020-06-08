@@ -4,7 +4,7 @@ using System.Text;
 using Gs2.Gs2Quest.Model;
 using Gs2.Unity.Gs2Quest.Model;
 using Gs2.Weave.Core.Editor;
-using LitJson;
+using Gs2.Util.LitJson;
 using UnityEditor;
 using UnityEngine;
 
