@@ -19,7 +19,7 @@
   },
   "sampleScene": "StaminaStoreSample",
   "dependencies": {
-    "io.gs2.unity.weave.money-store": "1.0.4",
-    "io.gs2.unity.weave.stamina": "1.0.4"
+    "io.gs2.unity.weave.money-store": "1.0.5",
+    "io.gs2.unity.weave.stamina": "1.0.5"
   }
 }

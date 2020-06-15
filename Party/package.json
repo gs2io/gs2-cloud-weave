@@ -19,6 +19,6 @@
   },
   "sampleScene": "PartyScene",
   "dependencies": {
-    "io.gs2.unity.weave.unit": "1.0.5"
+    "io.gs2.unity.weave.unit": "1.0.6"
   }
 }

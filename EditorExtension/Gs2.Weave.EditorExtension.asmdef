@@ -3,9 +3,10 @@
     "references": [
         "Unity.EditorCoroutines.Editor"
     ],
-    "includePlatforms": [],
-    "excludePlatforms": [
+    "includePlatforms": [
         "Editor"
+    ],
+    "excludePlatforms": [
     ],
     "allowUnsafeCode": false,
     "overrideReferences": false,
