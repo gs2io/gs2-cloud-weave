@@ -1,7 +1,7 @@
 ﻿﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LitJson;
+  using Gs2.Util.LitJson;
 
 namespace Gs2.Weave.EditorExtension.Editor.Model
 {

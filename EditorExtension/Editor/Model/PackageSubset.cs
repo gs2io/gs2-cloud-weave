@@ -1,5 +1,5 @@
 ﻿﻿﻿using System;
-  using LitJson;
+using Gs2.Util.LitJson;
 
 namespace Gs2.Weave.EditorExtension.Editor.Model
 {

@@ -2,7 +2,7 @@
  using System.Collections;
 using System.Collections.Generic;
 using Gs2.Weave.EditorExtension.Editor.Model;
-using LitJson;
+  using Gs2.Util.LitJson;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
