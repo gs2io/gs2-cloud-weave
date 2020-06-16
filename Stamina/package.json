@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.stamina",
   "displayName": "CloudWeave Stamina",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "unity": "2019.3",
   "description": "スタミナを消費してゲーム内通貨を入手できるクエストを実行できるようにします。",
   "keywords": [
