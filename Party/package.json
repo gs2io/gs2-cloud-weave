@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.party",
   "displayName": "CloudWeave Party",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "unity": "2019.3",
   "description": "ユニットを組み合わせてパーティを編成できるようにします。",
   "keywords": [
@@ -19,6 +19,6 @@
   },
   "sampleScene": "PartyScene",
   "dependencies": {
-    "io.gs2.unity.weave.unit": "1.0.6"
+    "io.gs2.unity.weave.unit": "1.0.7"
   }
 }

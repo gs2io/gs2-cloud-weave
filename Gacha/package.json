@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.gacha",
   "displayName": "CloudWeave Gacha",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "unity": "2019.3",
   "description": "課金通貨を使用してガチャを引き、ユニットを手に入れるようにします。",
   "keywords": [
@@ -19,9 +19,9 @@
   },
   "sampleScene": "GachaScene",
   "dependencies": {
-    "io.gs2.unity.weave.money-store": "1.0.5",
-    "io.gs2.unity.weave.unit": "1.0.6",
-    "io.gs2.unity.weave.job-queue": "1.0.6"
+    "io.gs2.unity.weave.money-store": "1.0.6",
+    "io.gs2.unity.weave.unit": "1.0.7",
+    "io.gs2.unity.weave.job-queue": "1.0.7"
   },
   "repository": {
     "type": "git",

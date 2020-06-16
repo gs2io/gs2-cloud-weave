@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.experience",
   "displayName": "CloudWeave Experience",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "unity": "2019.3",
   "description": "ユニットに経験値を持たせます。",
   "keywords": [
@@ -19,6 +19,6 @@
   },
   "sampleScene": "ExperienceScene",
   "dependencies": {
-    "io.gs2.unity.weave.unit": "1.0.6"
+    "io.gs2.unity.weave.unit": "1.0.7"
   }
 }
