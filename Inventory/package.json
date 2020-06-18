@@ -19,6 +19,6 @@
   },
   "sampleScene": "InventorySample",
   "dependencies": {
-    "io.gs2.unity.weave.login": "1.0.13"
+    "io.gs2.unity.weave.login": "1.0.14"
   }
 }

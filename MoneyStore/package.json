@@ -19,6 +19,6 @@
   },
   "sampleScene": "MoneyStoreScene",
   "dependencies": {
-    "io.gs2.unity.weave.money": "1.0.8"
+    "io.gs2.unity.weave.money": "1.0.9"
   }
 }

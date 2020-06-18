@@ -18,9 +18,9 @@
     "email": "contact@gs2.io"
   },
   "sampleScene": "LoginSample",
-  "tutorialWindowClassPath": "Gs2.Weave.Login.Editor.Tutorial.TutorialWindow, Gs2.Weave.Login",
+  "tutorialWindowClassPath": "Gs2.Weave.Login.Editor.Tutorial.TutorialWindow, Gs2.Weave.Login.Editor",
   "dependencies": {
-    "io.gs2.unity.weave.credential": "1.0.21",
+    "io.gs2.unity.weave.credential": "1.0.22",
     "com.unity.modules.jsonserialize": "1.0.0"
   }
 }

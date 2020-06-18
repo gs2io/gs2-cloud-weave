@@ -19,6 +19,6 @@
   },
   "sampleScene": "ExperienceScene",
   "dependencies": {
-    "io.gs2.unity.weave.unit": "1.0.7"
+    "io.gs2.unity.weave.unit": "1.0.8"
   }
 }

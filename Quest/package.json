@@ -19,8 +19,8 @@
   },
   "sampleScene": "QuestScene",
   "dependencies": {
-    "io.gs2.unity.weave.money-store": "1.0.6",
-    "io.gs2.unity.weave.stamina-store": "1.0.5",
-    "io.gs2.unity.weave.gold": "1.0.7"
+    "io.gs2.unity.weave.money-store": "1.0.7",
+    "io.gs2.unity.weave.stamina-store": "1.0.6",
+    "io.gs2.unity.weave.gold": "1.0.8"
   }
 }

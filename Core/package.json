@@ -1,7 +1,7 @@
 {
   "name": "io.gs2.unity.weave.core",
   "displayName": "CloudWeave Core",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "unity": "2019.3",
   "description": "CloudWeave を利用するために必要となる基本コードセットです。",
   "keywords": [
@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "com.unity.ugui": "1.0.0",
-    "io.gs2.unity.sdk": "2020.6.3"
+    "io.gs2.unity.sdk": "2020.6.4"
   }
 }
