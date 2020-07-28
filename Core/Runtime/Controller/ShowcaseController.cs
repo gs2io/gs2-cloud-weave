@@ -8,6 +8,9 @@ using Gs2.Unity.Gs2Showcase.Result;
 using Gs2.Unity.Util;
 using Gs2.Weave.Core.CallbackEvent;
 using UnityEngine;
+#if UNITY_PURCHASING
+using UnityEngine.Purchasing;
+#endif
 
 namespace Gs2.Weave.Core.Controller
 {
@@ -61,10 +64,12 @@ namespace Gs2.Weave.Core.Controller
         {
             var tempConfig = new List<EzConfig>(config);
 #if UNITY_PURCHASING
+            IStoreController controller = null;
+            Product product = null;
             string receipt = null;
             if (contentsId != null)
             {
-                AsyncResult<string> result = null;
+                AsyncResult<Gs2.Unity.Util.PurchaseParameters> result = null;
                 yield return new IAPUtil().Buy(
                     r => { result = r; },
                     contentsId
@@ -78,7 +83,9 @@ namespace Gs2.Weave.Core.Controller
                     yield break;
                 }
 
-                receipt = result.Result;
+                receipt = result.Result.receipt;
+                controller = result.Result.controller;
+                product = result.Result.product;
             }
 
             
@@ -121,6 +128,10 @@ namespace Gs2.Weave.Core.Controller
             }
 
             onIssueBuyStampSheet.Invoke(stampSheet);
+
+#if UNITY_PURCHASING
+            controller.ConfirmPendingPurchase(product);
+#endif
         }
     }
 }
